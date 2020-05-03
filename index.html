@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content='Справочно-аналитическая система
+			"Биограф". Анализ политических структур.'>
+		<title>Биограф: политинформационная система</title>
+		<link rel="stylesheet" href="css/styles.css">
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+if (document.location.hostname != "localhost") {
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter39565165 = new Ya.Metrika({
+                    id:39565165,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+} else {
+	console.log("You're on localhost.");
+}
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/39565165" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+	</head>
+<body>
+	<header>
+        <img src="img/logo.jpg">
+	</header>
+	<main>
+		<h1>Биограф</h1>
+		<section id="caption">
+		<p>Политинформационная система</p>
+		</section>
+		<p>"Биограф" показывает связи между людьми и группами людей. Например,
+			чиновник или бизнесмен может входить в один или несколько совещательных органов
+			и быть связан с другими членами этих органов, а также быть связующим
+			звеном между несколькими органами и входящими в них людьми.</p>
+		<p>Связи между людьми можно условно поделить на формальные (официальные)
+			и неформальные (любовные, дружеские, клановые и др.)
+			Сейчас "Биограф" показывает формальные связи на основе официальных данных
+			об участии людей в работе государственных или общественных совещательных органов.</p>
+		<p>Введите интересующее ФИО в строку поиска - например, "Малкина Ия Витальевна" - и посмотрите,
+			что получится.</p>
+		<input id="fio" value="" onkeyup="get_fio(this.value)">
+		<input type="button" id="show_button" value="Показать">
+		<div id="show_fio">
+			<ul></ul>
+		</div>
+		<p id="message"></p>
+		<div id="person"></div>
+		<section id="graph"></section>
+		<h2>Участвует в работе органов:</h2>
+		<section id="struktury">
+			<ul></ul>	
+		</section>
+<div id="tooltip" class="hidden"><p id="fio_title"></p></div>
+	</main>
+	<footer>
+		<p>Сделано в dataШколе сообщества "<a href="http://opendata.by">Открытые
+			данные для Беларуси</a>".<br>Испытательная версия.</p>
+		<script src="js/d3.v3.min.js"></script>
+		<script src="js/script.js"></script>
+	</footer>
+</body>
+</html>
+

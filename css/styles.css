@@ -1,0 +1,107 @@
+.link {
+	stroke: green;
+    stroke-width: .1px;
+}
+.node {
+	stroke: #fff;
+    
+}
+body {
+    margin: 0;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+main {
+    margin: 0 auto 0 60px;
+    max-width: 80%;
+}
+header, footer {
+    background-color: #2a2f4e;
+}
+h1 {
+    margin-bottom: 2px
+}
+#caption p {
+    margin: 0 auto 1em auto;
+    padding: 0;
+}
+.hidden {
+	display: none;
+}
+#tooltip {
+  position: absolute;
+  width: 150px;
+  height: auto;
+  padding: 5px;
+  background-color: white;
+  pointer-events: none;
+  border: 1px solid black;
+}
+#tooltip.hidden {
+  display: none;
+}
+#tooltip p {
+  margin: 0;
+  font-size: 10px;
+}
+#fio {
+	position: realtive;
+	font-size: 20px;
+    padding: 5px;
+	width: 50%;
+}
+#show_button {
+	font-size: 20px;
+    padding: 5px;
+    border-width: 2px;
+    margin-left: .2%;
+    }
+#show_fio ul {
+	position: absolute;
+	background-color: white;
+    margin: 0.2em auto 0.2em 0;
+    padding-left: .3em;
+    width: 40%;
+}
+#show_fio ul li {
+    list-style: none;
+    margin-left: 0;
+    cursor: pointer;
+    padding: 2px;
+    font-size: 16px;
+}
+
+#show_fio li:hover {
+background-color: #CECECE;
+}
+#person {
+    max-width: 60%;
+}
+#person img {
+    width: 100px;
+    float: left;
+    margin-right: 1em;
+}
+.active {
+	fill: teal;
+}
+#graph {
+        clear: both;
+}
+#graph svg {
+    border: 1px solid black;
+    margin-top: 1em;
+}
+
+footer p {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 60px;
+	font-size: .8em;
+    color: white;
+    margin: 0 auto;
+}
+footer a {
+    color: white;
+    margin: 0 auto;
+}
