@@ -1,6 +1,4 @@
 var message = d3.select("#message");
-//var fio_selected = d3.select("#fio").node().defaultValue;
-//d3.select("#fio").node().value = fio_selected;
 var width = 500, height = 250;
 var svg = d3.select("#graph")
 			.append("svg")
@@ -12,15 +10,12 @@ var force = d3.layout.force()
 var draw_button = d3.select("#show_button");
 
 function hello() {
-	fetch("https://api.opendata.by/biograph/?hello")
+	fetch("/api/biograph/?hello")
 		.then(response => response.json())
-		.then(data => { //document.getElementById("fio").setAttribute("value", data[0].fio); 
+		.then(data => {
 						document.getElementById("fio").value = data[0].fio;
-						d3.json("https://api.opendata.by/biograph/?d=" + data[0].fio, draw)
+						d3.json("/api/biograph/?d=" + data[0].fio, draw)
 			});
-//var fio_selected = d3.select("#fio").node().defaultValue;
-d3.json("https://api.opendata.by/biograph/?d=" + data[0].fio, draw)
-
 }
 
 function get_fio(str) {
@@ -31,7 +26,7 @@ function get_fio(str) {
 	if (str.length <= 4 || str == "Введите ФИО") {
 		target.classed("hidden", true);
 	} else if (str.length > 4) {
-		d3.json("https://api.opendata.by/biograph/?fio=" + str,
+		d3.json("/api/biograph/?fio=" + str,
 			function(data) {
 				if (data.length == 0) {
 					target.classed("hidden", true);
@@ -57,7 +52,6 @@ function get_fio(str) {
 						.remove();
 			}
 		});
-
 	}
 }
 
@@ -87,12 +81,10 @@ function draw(error, data) {
 
 var nodesByName = {};
 
-
 links.forEach(function(link) {
 		link.source = nodeByName(link.source);
 		link.target = nodeByName(link.target);
 	});
-
 
 	var nodes = d3.values(nodesByName);
 
@@ -137,7 +129,6 @@ links.forEach(function(link) {
 		.on("tick", tick)
 		.start();
 
-
 	function tick() {
 		link.attr("x1", function(d) { return d.source.x; })
 	        .attr("y1", function(d) { return d.source.y; })
@@ -177,8 +168,7 @@ fioField.on("focus", function() {
 
 draw_button.on("click", function() {
 	d3.select("#show_fio").classed("hidden", true);
-	d3.json("https://api.opendata.by/biograph/?d=" + fioField.node().value, draw);
+	d3.json("/api/biograph/?d=" + fioField.node().value, draw);
 	});
-
 
 hello();
