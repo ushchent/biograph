@@ -10,11 +10,11 @@ var force = d3.layout.force()
 var draw_button = d3.select("#show_button");
 
 function hello() {
-	fetch("/api/biograph/?hello")
+	fetch("https://api.opendata.by/biograph/?hello")
 		.then(response => response.json())
 		.then(data => {
 						document.getElementById("fio").value = data[0].fio;
-						d3.json("/api/biograph/?d=" + data[0].fio, draw)
+						d3.json("https://api.opendata.by/biograph/?d=" + data[0].fio, draw)
 			});
 }
 
@@ -26,7 +26,7 @@ function get_fio(str) {
 	if (str.length <= 4 || str == "Введите ФИО") {
 		target.classed("hidden", true);
 	} else if (str.length > 4) {
-		d3.json("/api/biograph/?fio=" + str,
+		d3.json("https://api.opendata.by/biograph/?fio=" + str,
 			function(data) {
 				if (data.length == 0) {
 					target.classed("hidden", true);
@@ -168,7 +168,7 @@ fioField.on("focus", function() {
 
 draw_button.on("click", function() {
 	d3.select("#show_fio").classed("hidden", true);
-	d3.json("/api/biograph/?d=" + fioField.node().value, draw);
+	d3.json("https://api.opendata.by/biograph/?d=" + fioField.node().value, draw);
 	});
 
 hello();
