@@ -1,5 +1,5 @@
 var message = d3.select("#message");
-var width = 500, height = 250;
+var width = 800, height = 400;
 var svg = d3.select("#graph")
 			.append("svg")
 			.attr({ width: width,
