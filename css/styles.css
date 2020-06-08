@@ -21,9 +21,10 @@ header, footer {
 h1 {
     margin-bottom: 2px
 }
-#caption p {
+#caption {
     margin: 0 auto 1em auto;
     padding: 0;
+    font-size: .9em;
 }
 .hidden {
 	display: none;
